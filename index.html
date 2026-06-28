@@ -1,0 +1,1788 @@
+  ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Lot Bazaar | Wholesale Clothes & Footwear surplus Lots</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for premium, professional readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        bazaar: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b', // Accent Amber/Gold
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        indigoBrand: {
+                            50: '#e0e7ff',
+                            900: '#1e1b4b', // Deep Indigo for trust & authority
+                            950: '#0f0e26'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbars for inquiry drawer while keeping scrolling functional */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Pulsing ring animation for AI floating widget */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.08); opacity: 0.8; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        .ai-glow {
+            animation: pulse-ring 3s infinite ease-in-out;
+        }
+        /* Chat bubble typing loader animation */
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            display: inline-block;
+            animation: bounce-dots 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce-dots {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- TOP NOTIFICATION BAR -->
+    <div class="bg-indigoBrand-900 text-amber-400 text-xs sm:text-sm py-2 px-4 text-center font-semibold tracking-wide flex items-center justify-center gap-2">
+        <span class="inline-flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+        🔥 EXPORT SURPLUS & FRESH LOTS JUST ARRIVED! PAN-INDIA DELIVERY. MINIMUM ORDER QUANTITY (MOQ) APPLIES.
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-2 group">
+                    <div class="bg-amber-500 text-indigoBrand-900 p-2.5 rounded-xl shadow-md group-hover:bg-amber-600 transition duration-300">
+                        <!-- Custom SVG representing Bazaar / Commerce -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-black text-indigoBrand-900 tracking-tight block leading-none">INDIAN LOT</span>
+                        <span class="text-xs font-bold text-amber-600 tracking-widest uppercase block mt-1">BAZAAR <span class="text-[10px] text-gray-400 font-medium">| WHOLESALER</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 font-semibold text-gray-600">
+                    <a href="#hero" class="hover:text-indigoBrand-900 transition duration-150">Home</a>
+                    <a href="#lots-catalog" class="hover:text-indigoBrand-900 transition duration-150">Wholesale Lots</a>
+                    <a href="#profit-calculator" class="hover:text-indigoBrand-900 transition duration-150">Profit Calculator</a>
+                    <a href="#about-us" class="hover:text-indigoBrand-900 transition duration-150">About Us</a>
+                    <a href="#contact" class="hover:text-indigoBrand-900 transition duration-150">Contact</a>
+                    <button onclick="toggleAiAssistant()" class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 border border-amber-500/30 text-amber-700 hover:bg-amber-500 hover:text-indigoBrand-900 rounded-full text-xs font-bold transition duration-200">
+                        ✨ Indian Lot Bazaar AI Advisor
+                    </button>
+                </nav>
+
+                <!-- Actions / Cart -->
+                <div class="flex items-center gap-4">
+                    <!-- Inquiry Basket Trigger -->
+                    <button onclick="toggleInquiryBasket()" class="relative p-2.5 bg-gray-100 hover:bg-amber-100 text-indigoBrand-900 rounded-xl transition duration-200 group">
+                        <svg class="w-6 h-6 text-gray-700 group-hover:text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        <span id="basket-count-badge" class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white animate-bounce hidden">0</span>
+                    </button>
+
+                    <!-- Contact CTA -->
+                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-indigoBrand-900 hover:bg-amber-500 hover:text-indigoBrand-900 text-white rounded-xl text-sm font-bold tracking-wide transition-all duration-300 shadow-md">
+                        Get Wholesale Quote
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-600 hover:text-indigoBrand-900">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white transition duration-200">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigoBrand-900">Home</a>
+                <a href="#lots-catalog" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigoBrand-900">Wholesale Lots</a>
+                <a href="#profit-calculator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigoBrand-900">Profit Calculator</a>
+                <a href="#about-us" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigoBrand-900">About Us</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigoBrand-900">Contact Us</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-3 bg-amber-500 hover:bg-amber-600 text-indigoBrand-900 font-bold rounded-lg transition duration-200">
+                    Call / WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-gradient-to-br from-indigoBrand-950 via-indigoBrand-900 to-slate-900 text-white overflow-hidden py-16 sm:py-24 lg:py-32">
+        <!-- Visual overlays / Grid lines pattern -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(245,158,11,0.12),transparent_40%)]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left content column -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase">
+                    🥇 INDIA'S PREMIER LOT WHOLESALER
+                </span>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Premium <span class="text-amber-400">Clothes & Footwear</span> Surplus & Inventory Lots
+                </h1>
+                
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    Direct factory leftover stock, surplus clearance deals, and high-demand wholesale apparel lots. We supply retailers, boutique owners, and online sellers across India with margins that help you double your investment.
+                </p>
+
+                <!-- Trust Points Grid -->
+                <div class="grid grid-cols-2 gap-4 py-4 max-w-md mx-auto lg:mx-0 text-left">
+                    <div class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Direct Factory Prices</h4>
+                            <p class="text-xs text-gray-400">No middlemen cost</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Assured Lot Quality</h4>
+                            <p class="text-xs text-gray-400">Strict QC inspection</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Pan-India Cargo</h4>
+                            <p class="text-xs text-gray-400">Safe, trackable shipping</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Wholesale MOQ</h4>
+                            <p class="text-xs text-gray-400">Designed for retail traders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#lots-catalog" class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-600 text-indigoBrand-900 font-bold rounded-xl transition-all duration-300 shadow-lg text-center">
+                        Explore Stock Lots
+                    </a>
+                    <a href="#profit-calculator" class="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white font-bold rounded-xl transition-all duration-300 text-center">
+                        Calculate Wholesale Margin
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right visual/badge column -->
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
+                <!-- Stacked Product Preview Grid -->
+                <div class="relative w-full max-w-sm aspect-square bg-white/5 rounded-3xl p-6 border border-white/10 backdrop-blur-sm shadow-2xl flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase">Wholesale Exclusives</span>
+                        <div class="flex gap-1 text-yellow-400">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <span class="text-xs text-white font-bold">4.9/5 Rating</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive showcase element inside hero -->
+                    <div class="my-6 space-y-4">
+                        <div class="bg-white/10 hover:bg-white/15 transition rounded-xl p-4 flex items-center justify-between border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl">🧥</span>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Export Surplus Apparel</h4>
+                                    <p class="text-xs text-gray-400">Jeans, Tshirts, Kurtis, Shirts</p>
+                                </div>
+                            </div>
+                            <span class="text-amber-400 font-extrabold text-sm">UP TO 80% OFF</span>
+                        </div>
+                        <div class="bg-white/10 hover:bg-white/15 transition rounded-xl p-4 flex items-center justify-between border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl">👟</span>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Branded Footwear Lots</h4>
+                                    <p class="text-xs text-gray-400">Casuals, Sports, Formal Surplus</p>
+                                </div>
+                            </div>
+                            <span class="text-amber-400 font-extrabold text-sm">STARTING ₹149/-</span>
+                        </div>
+                    </div>
+
+                    <!-- Counter/Stats -->
+                    <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
+                        <div>
+                            <span class="block text-xl font-extrabold text-amber-400">10,000+</span>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Pcs Stocked</span>
+                        </div>
+                        <div>
+                            <span class="block text-xl font-extrabold text-amber-400">1,200+</span>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">Retailers Served</span>
+                        </div>
+                        <div>
+                            <span class="block text-xl font-extrabold text-amber-400">28+</span>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-widest">States Supplied</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRUST VALUE PILLARS -->
+    <section class="bg-white py-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pillar 1 -->
+                <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition">
+                    <div class="bg-indigo-50 text-indigo-600 p-3 rounded-xl">
+                        <!-- Truck icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6 0a1 1 0 001-1v-4a1 1 0 00-1-1m-1.414-1.414L10 11.586"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-gray-900 text-sm">Pan-India Freight Service</h4>
+                        <p class="text-xs text-gray-500">Shipped through reliable transport lines</p>
+                    </div>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition">
+                    <div class="bg-amber-50 text-amber-600 p-3 rounded-xl">
+                        <!-- Shield check -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-gray-900 text-sm">Premium Quality Assurance</h4>
+                        <p class="text-xs text-gray-500">Video inspection of lots before dispatch</p>
+                    </div>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition">
+                    <div class="bg-green-50 text-green-600 p-3 rounded-xl">
+                        <!-- Money card icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-gray-900 text-sm">Lowest Unit Pricing</h4>
+                        <p class="text-xs text-gray-500">Unbeatable bulk clearance deals</p>
+                    </div>
+                </div>
+                <!-- Pillar 4 -->
+                <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition">
+                    <div class="bg-red-50 text-red-600 p-3 rounded-xl">
+                        <!-- Users icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-gray-900 text-sm">Reseller Programs</h4>
+                        <p class="text-xs text-gray-500">Special support for boutique start-ups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHOLESALE STOCK LOTS CATALOG -->
+    <section id="lots-catalog" class="py-16 sm:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold tracking-widest text-indigo-600 uppercase block mb-2">Live Inventory Stock</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-indigoBrand-900">Current Hot Wholesale Lots</h2>
+                <p class="text-sm sm:text-base text-gray-600 mt-3">Select from our verified bulk lots. Add items to your quote list, then request factory direct wholesale pricing tailored to your delivery location.</p>
+            </div>
+
+            <!-- Categories / Filter tab buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+                <button onclick="filterCategory('all')" id="tab-all" class="category-tab px-5 py-2.5 rounded-full font-bold text-sm bg-indigoBrand-900 text-white shadow-md transition duration-200">
+                    📂 All Lots (<span id="count-all">8</span>)
+                </button>
+                <button onclick="filterCategory('clothes')" id="tab-clothes" class="category-tab px-5 py-2.5 rounded-full font-bold text-sm bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition duration-200">
+                    👕 Clothing Lots (<span id="count-clothes">4</span>)
+                </button>
+                <button onclick="filterCategory('footwear')" id="tab-footwear" class="category-tab px-5 py-2.5 rounded-full font-bold text-sm bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition duration-200">
+                    👟 Footwear Lots (<span id="count-footwear">4</span>)
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Lot Items are dynamically rendered here via JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PROFIT & INVESTMENT CALCULATOR -->
+    <section id="profit-calculator" class="py-16 bg-indigoBrand-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.1),transparent_30%)]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-amber-400 font-extrabold text-xs uppercase tracking-widest">Interactive Business Tool</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Wholesale Profit & Discount Calculator</h2>
+                <p class="text-xs sm:text-sm text-gray-300 mt-2">Adjust your target investment volume to see discount tiers and estimated retail profits you can generate with our lots!</p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 backdrop-blur rounded-3xl p-6 sm:p-10 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Calculator inputs (Left side) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-200 mb-2">1. Select Product Type:</label>
+                        <select id="calc-product-type" onchange="calculateMargins()" class="w-full bg-indigoBrand-950 text-white border border-white/20 rounded-xl px-4 py-3 font-semibold focus:border-amber-500 outline-none transition">
+                            <option value="premium-jeans" data-unit-cost="180" data-retail="699">👖 Premium Jeans Surplus Lot (Retail MSRP: ₹699/pc)</option>
+                            <option value="ladies-kurtis" data-unit-cost="110" data-retail="399">👗 Cotton Ladies Kurtis Mix Lot (Retail MSRP: ₹399/pc)</option>
+                            <option value="sports-shoes" data-unit-cost="280" data-retail="999">👟 Branded Sports Shoes Export (Retail MSRP: ₹999/pc)</option>
+                            <option value="casual-shirts" data-unit-cost="130" data-retail="499">👔 Men's Cotton Casual Shirts (Retail MSRP: ₹499/pc)</option>
+                            <option value="kids-wear" data-unit-cost="80" data-retail="299">🧒 Premium Kids Apparel Mix (Retail MSRP: ₹299/pc)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-sm font-bold text-gray-200">2. Select Wholesale Quantity (Lot Size):</label>
+                            <span id="calc-quantity-val" class="text-amber-400 font-extrabold text-lg">500 Pieces</span>
+                        </div>
+                        <input id="calc-quantity-slider" type="range" min="100" max="5000" step="100" value="500" oninput="calculateMargins()" class="w-full accent-amber-500 bg-indigoBrand-950 h-2 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                            <span>100 Pcs (Min Lot)</span>
+                            <span>1,500 Pcs</span>
+                            <span>3,000 Pcs</span>
+                            <span>5,000 Pcs (Wholesale Mega)</span>
+                        </div>
+                    </div>
+
+                    <!-- Discount Tier Notification -->
+                    <div id="discount-badge-box" class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl text-amber-300 text-xs font-semibold flex items-center gap-2">
+                        <span class="text-base">🚀</span>
+                        <span id="discount-badge-text">Wholesale Volume Tier: 5% Extra Bulk Discount Applied!</span>
+                    </div>
+                </div>
+
+                <!-- Live Estimates (Right side) -->
+                <div class="lg:col-span-5 bg-indigoBrand-950 rounded-2xl p-6 border border-white/10 space-y-4">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 text-center border-b border-white/5 pb-2">Estimated Financial Output</h3>
+                    
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-sm text-gray-300">Base Cost / Piece:</span>
+                        <span id="out-base-cost" class="font-bold text-sm text-gray-100">₹180</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-sm text-gray-300">Lot Volume Discount:</span>
+                        <span id="out-bulk-discount" class="font-bold text-sm text-amber-400">- ₹9 (5%)</span>
+                    </div>
+
+                    <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                        <span class="text-sm font-bold text-gray-200">Final Price / Piece:</span>
+                        <span id="out-final-unit" class="font-extrabold text-base text-green-400">₹171</span>
+                    </div>
+
+                    <div class="space-y-1">
+                        <span class="text-[11px] uppercase text-gray-400 block tracking-wider">Your Total Wholesale Cost:</span>
+                        <div id="out-total-cost" class="text-2xl font-black text-white">₹85,500</div>
+                    </div>
+
+                    <div class="space-y-1 bg-green-950/40 p-3 rounded-xl border border-green-500/10">
+                        <span class="text-[11px] uppercase text-green-400 block tracking-wider">Estimated Retail Revenue:</span>
+                        <div class="flex items-baseline justify-between">
+                            <span id="out-retail-revenue" class="text-xl font-bold text-green-300">₹3,49,500</span>
+                            <span id="out-profit-percent" class="text-xs font-bold text-green-400 bg-green-500/20 px-2 py-0.5 rounded-full">+308% ROI</span>
+                        </div>
+                    </div>
+
+                    <button onclick="addCalculatedToInquiry()" class="w-full py-3 bg-amber-500 hover:bg-amber-600 active:scale-95 transition text-indigoBrand-900 font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+                        Add This Calculated Lot to RFQ
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about-us" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left visuals -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="bg-gray-100 rounded-3xl overflow-hidden aspect-square flex flex-col items-center justify-center p-6 text-center shadow-sm">
+                            <span class="text-5xl mb-2">👕</span>
+                            <h4 class="font-bold text-gray-900 text-sm">Clothes Division</h4>
+                            <p class="text-xs text-gray-500 mt-1">Export leftovers, surplus stocks & designer mix lots</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-3xl overflow-hidden aspect-[4/3] flex flex-col items-center justify-center p-6 text-center shadow-sm border border-indigo-100">
+                            <span class="text-3xl font-extrabold text-indigo-900">100% Verified</span>
+                            <p class="text-xs text-indigo-700 mt-1">Double Checked QC Standards</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="bg-amber-50 rounded-3xl overflow-hidden aspect-[4/3] flex flex-col items-center justify-center p-6 text-center shadow-sm border border-amber-100">
+                            <span class="text-3xl font-extrabold text-amber-700">PAN-INDIA</span>
+                            <p class="text-xs text-amber-900 mt-1">We ship across all pin codes</p>
+                        </div>
+                        <div class="bg-gray-100 rounded-3xl overflow-hidden aspect-square flex flex-col items-center justify-center p-6 text-center shadow-sm">
+                            <span class="text-5xl mb-2">👟</span>
+                            <h4 class="font-bold text-gray-900 text-sm">Footwear Division</h4>
+                            <p class="text-xs text-gray-500 mt-1">Sports Shoes, Sneakers, Sandals direct surplus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right text content -->
+                <div class="space-y-6">
+                    <span class="text-xs font-extrabold tracking-widest text-indigo-600 uppercase block">WHO WE ARE</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-indigoBrand-900">Your Trusted B2B Wholesale Trading Partner</h2>
+                    
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        At <strong class="text-indigoBrand-900">Indian Lot Bazaar</strong>, we specialize in sourcing liquidations, manufacturing overruns, high-quality export surplus clothes, and brand-authorized stock clearance footwear directly from leading producers. 
+                    </p>
+
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        By purchasing entire lot clearances in massive volumes, we pass the savings directly onto you. Whether you are running a boutique store, selling online, or managing a wholesale center, we provide the supply reliability you need.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 text-green-700 p-1.5 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 text-sm">No Broker Commissions - Factory Direct Dealings</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 text-green-700 p-1.5 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 text-sm">Real Video Inspection of actual Lot stock before buy</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 text-green-700 p-1.5 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="font-semibold text-gray-800 text-sm">Safe and Insured Transport Dispatch with Tracking ID</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="px-6 py-3.5 bg-indigoBrand-900 hover:bg-amber-500 hover:text-indigoBrand-900 text-white font-bold rounded-xl text-center transition-all duration-300 shadow-md">
+                            Become a Retail Partner
+                        </a>
+                        <a href="#profit-calculator" class="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-indigoBrand-900 font-bold rounded-xl text-center transition duration-200">
+                            Check Profit Potential
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & INQUIRY FORM SECTION -->
+    <section id="contact" class="py-16 sm:py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact info (Left) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-extrabold tracking-widest text-indigo-600 uppercase block">GET IN TOUCH</span>
+                    <h2 class="text-3xl font-extrabold text-indigoBrand-900">Wholesale Desk Help</h2>
+                    <p class="text-sm text-gray-600">Have questions about our MOQ, custom transport shipping rates, packaging custom requirements, or need physical lot videos? Connect directly with our dispatch department.</p>
+
+                    <!-- Contact Details cards -->
+                    <div class="space-y-4">
+                        <!-- Card 1 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="bg-amber-100 text-amber-700 p-3 rounded-lg shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-gray-900">Main Warehouse & Headquarter</h4>
+                                <p class="text-xs text-gray-500 mt-0.5">Khyala Road Vishnu Garden Near Shitla Mata Mandir, Subhash Nagar, New Delhi 110018, India</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="bg-indigo-100 text-indigo-700 p-3 rounded-lg shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-gray-900">Phone Support (10 AM - 8 PM)</h4>
+                                <p class="text-xs text-indigo-600 font-bold mt-0.5">+91 9873099173 / +91 7037635253</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="bg-emerald-100 text-emerald-700 p-3 rounded-lg shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-gray-900">Direct WhatsApp Department</h4>
+                                <p class="text-xs text-emerald-600 font-bold mt-0.5">+91 9873099173 (24/7 Available)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry / Contact Form (Right) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-bold text-indigoBrand-900 mb-6">Send Factory Wholesale Query</h3>
+                        
+                        <form id="direct-contact-form" onsubmit="handleDirectContactForm(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Your Full Name *</label>
+                                    <input type="text" required placeholder="Enter name" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-indigoBrand-900 outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Your Shop / Business Name</label>
+                                    <input type="text" placeholder="e.g. Balaji Garments" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-indigoBrand-900 outline-none transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Mobile / WhatsApp No *</label>
+                                    <input type="tel" required placeholder="e.g. 10 digit number" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-indigoBrand-900 outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-1">City / State *</label>
+                                    <input type="text" required placeholder="e.g. Patna, Bihar" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-indigoBrand-900 outline-none transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Product Categories of Interest</label>
+                                <div class="grid grid-cols-2 gap-2 mt-1">
+                                    <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-100 text-xs font-semibold">
+                                        <input type="checkbox" name="interest" value="clothes" class="accent-indigoBrand-900"> Clothes Lots
+                                    </label>
+                                    <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-100 text-xs font-semibold">
+                                        <input type="checkbox" name="interest" value="footwear" class="accent-indigoBrand-900"> Footwear Lots
+                                    </label>
+                                    <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-100 text-xs font-semibold">
+                                        <input type="checkbox" name="interest" value="export-surplus" class="accent-indigoBrand-900"> Export Surplus
+                                    </label>
+                                    <label class="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-100 text-xs font-semibold">
+                                        <input type="checkbox" name="interest" value="fresh-clearance" class="accent-indigoBrand-900"> Fresh Clearance Lots
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Specific Inquiry Message</label>
+                                <textarea rows="3" placeholder="Tell us what quantities or designs you require..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-indigoBrand-900 outline-none transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-indigoBrand-900 font-extrabold text-sm rounded-xl transition duration-200 shadow-md">
+                                Send Bulk Query Dispatch
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE-OVER RFQ INQUIRY BASKET DRAWER (COLLAPSED BY DEFAULT) -->
+    <div id="inquiry-drawer-overlay" onclick="toggleInquiryBasket()" class="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm hidden transition-opacity duration-300"></div>
+    <div id="inquiry-drawer" class="fixed top-0 right-0 h-full w-full sm:max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-indigoBrand-900 text-white">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                </svg>
+                <div>
+                    <h3 class="font-extrabold text-lg">Inquiry Basket</h3>
+                    <p class="text-xs text-amber-300 font-semibold" id="drawer-subtitle">0 Lots Selected</p>
+                </div>
+            </div>
+            <button onclick="toggleInquiryBasket()" class="p-2 bg-white/10 hover:bg-white/20 rounded-lg text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Drawer Body (Scrollable List) -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4 no-scrollbar" id="drawer-items-container">
+            <!-- Dynamic elements generated here by js -->
+        </div>
+
+        <!-- Drawer Footer Form -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50 space-y-4">
+            <!-- AI Campaign Generator Trigger -->
+            <button onclick="generateBasketCampaignAds()" class="w-full py-2.5 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500 hover:text-indigoBrand-900 text-amber-800 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition duration-200 shadow-sm">
+                <span>✨ AI Marketing Copilot: Generate Broadcast Ads for This Basket</span>
+            </button>
+
+            <h4 class="font-bold text-xs uppercase tracking-wider text-gray-500">Submit Wholesale RFQ Form</h4>
+            
+            <form id="drawer-form" onsubmit="submitRFQ(event)" class="space-y-3">
+                <input type="text" id="rfq-name" required placeholder="Name *" class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-xs focus:border-indigo-600 outline-none">
+                <input type="tel" id="rfq-phone" required placeholder="WhatsApp No *" class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-xs focus:border-indigo-600 outline-none">
+                <input type="text" id="rfq-city" required placeholder="City & State *" class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-xs focus:border-indigo-600 outline-none">
+                
+                <button type="submit" id="submit-rfq-btn" class="w-full py-3 bg-indigoBrand-900 hover:bg-indigoBrand-950 text-white font-bold text-xs rounded-lg uppercase tracking-wider transition duration-200 shadow-md">
+                    Send Wholesale RFQ Now
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- CUSTOM NOTIFICATION POPUP (Replacing alert) -->
+    <div id="custom-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-indigoBrand-950 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-amber-500/20 max-w-sm sm:max-w-md transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+        <span class="text-2xl" id="toast-emoji">🎉</span>
+        <div>
+            <h4 class="font-bold text-sm" id="toast-title">Notification</h4>
+            <p class="text-xs text-gray-300 mt-0.5" id="toast-message">Message text goes here.</p>
+        </div>
+        <button onclick="dismissToast()" class="ml-auto text-gray-400 hover:text-white font-bold text-sm">×</button>
+    </div>
+
+    
+    <!-- FLOATING BAZAAR AI ADVISOR WIDGET -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+        
+        <!-- Chatbox Container (Collapsed by default) -->
+        <div id="ai-chat-window" class="hidden w-80 sm:w-96 h-[460px] bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden flex flex-col mb-4 transition-all duration-300 transform translate-y-4 opacity-0">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-indigoBrand-950 to-indigoBrand-900 text-white p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-indigoBrand-950 font-black text-sm relative">
+                        🤖
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-indigoBrand-900 animate-pulse"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm tracking-tight">Indian Lot Bazaar AI Advisor</h4>
+                        <p class="text-[10px] text-green-400 font-semibold flex items-center gap-1">Online • Instant B2B Planner</p>
+                    </div>
+                </div>
+                <button onclick="toggleAiAssistant()" class="text-gray-300 hover:text-white p-1 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Chat Message List -->
+            <div id="ai-chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3.5 bg-gray-50 text-xs leading-relaxed">
+                <!-- Welcome system message -->
+                <div class="flex gap-2 max-w-[85%]">
+                    <div class="shrink-0 w-6 h-6 rounded-full bg-amber-500/15 text-amber-700 flex items-center justify-center text-xs">🤖</div>
+                    <div class="bg-white border border-gray-100 p-3 rounded-2xl rounded-tl-none shadow-sm text-gray-700">
+                        Namaste! 🙏 Welcome to the <strong>Indian Lot Bazaar AI Coordinator</strong>.<br><br>
+                        I'm specialized in coordinating factory leftovers and surplus lots for retail boutiques and traders across India. How can I assist your business today?
+                    </div>
+                </div>
+
+                <!-- Suggested Query Starters -->
+                <div class="pt-2 space-y-1.5" id="ai-quick-triggers">
+                    <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Suggested Quick Planners:</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button onclick="triggerQuickAiQuery('Which lots do you recommend for starting a fresh boutique with ₹50,000?')" class="bg-white border border-gray-200 hover:border-amber-500 hover:bg-amber-50/50 text-indigoBrand-900 px-2.5 py-1.5 rounded-xl font-medium shadow-xs transition text-left text-[11px]">
+                            💰 Plan ₹50k Budget Boutique
+                        </button>
+                        <button onclick="triggerQuickAiQuery('I am based in Bihar/UP. Recommend the best high-margin clothing and footwear lots for my local market.')" class="bg-white border border-gray-200 hover:border-amber-500 hover:bg-amber-50/50 text-indigoBrand-900 px-2.5 py-1.5 rounded-xl font-medium shadow-xs transition text-left text-[11px]">
+                            📍 Best Clothes for All India Markets
+                        </button>
+                        <button onclick="triggerQuickAiQuery('Show me footwear options with high profit margins under ₹200 cost price.')" class="bg-white border border-gray-200 hover:border-amber-500 hover:bg-amber-50/50 text-indigoBrand-900 px-2.5 py-1.5 rounded-xl font-medium shadow-xs transition text-left text-[11px]">
+                            👟 Shoes under ₹200 with High ROI
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="p-3 bg-white border-t border-gray-100 flex gap-2">
+                <input type="text" id="ai-user-input" onkeydown="handleAiChatKey(event)" placeholder="Ask Bazaar AI (e.g. Budget plan, summer lots...)" class="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs focus:border-indigoBrand-900 outline-none transition">
+                <button onclick="sendAiChatMessage()" class="bg-indigoBrand-900 hover:bg-amber-500 hover:text-indigoBrand-900 text-white p-2.5 rounded-xl shadow-md transition duration-200 shrink-0">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Action Button -->
+        <button onclick="toggleAiAssistant()" class="relative bg-gradient-to-tr from-indigoBrand-950 to-indigoBrand-900 text-white p-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group">
+            <span class="absolute -inset-1.5 rounded-full bg-amber-500/20 ai-glow z-0"></span>
+            <div class="relative z-10 flex items-center justify-center">
+                <!-- Glowing sparkle + chat icon -->
+                <svg class="w-6 h-6 text-amber-400 group-hover:rotate-12 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+                <span class="absolute -top-2.5 -right-2.5 bg-amber-500 text-indigoBrand-950 text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow border border-indigoBrand-900">AI Assistant</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- AI AD CAMPAIGN GENERATOR MODAL -->
+    <div id="ai-ad-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl transform scale-95 transition-transform duration-300">
+            
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-100 bg-gradient-to-r from-indigoBrand-950 to-indigoBrand-900 text-white flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">✨</span>
+                    <div>
+                        <h3 class="font-extrabold text-lg">AI Marketing Ad Generator</h3>
+                        <p class="text-xs text-amber-400 font-bold" id="ad-modal-lot-title">Generating high-conversion ads for stock lots...</p>
+                    </div>
+                </div>
+                <button onclick="closeAdModal()" class="p-2 bg-white/10 hover:bg-white/20 rounded-xl text-white transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Loader spinner -->
+            <div id="ad-modal-loader" class="p-16 flex flex-col items-center justify-center text-center space-y-4">
+                <div class="relative w-16 h-16">
+                    <div class="absolute inset-0 rounded-full border-4 border-indigoBrand-900/10"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-amber-500 border-t-transparent animate-spin"></div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 text-sm">Bazaar AI Copilot is thinking...</h4>
+                    <p class="text-xs text-gray-500 mt-1 max-w-sm">Generating premium retail sales ads, WhatsApp broadcast copy, and social hashtags optimized for reselling your stock.</p>
+                </div>
+            </div>
+
+            <!-- Ad Copy Tabs / Output (Hidden during loading) -->
+            <div id="ad-modal-content" class="hidden flex-1 overflow-y-auto flex flex-col">
+                <!-- Tab Headers -->
+                <div class="flex border-b border-gray-100 bg-gray-50/50 p-2 gap-1 shrink-0">
+                    <button onclick="switchAdTab('whatsapp')" id="tab-ad-whatsapp" class="flex-1 py-2.5 px-4 font-bold text-xs rounded-xl transition duration-200 text-center bg-indigoBrand-900 text-white">
+                        🟢 WhatsApp Broadcast
+                    </button>
+                    <button onclick="switchAdTab('instagram')" id="tab-ad-instagram" class="flex-1 py-2.5 px-4 font-bold text-xs rounded-xl transition duration-200 text-center text-gray-600 hover:bg-gray-100">
+                        📸 Instagram Post
+                    </button>
+                    <button onclick="switchAdTab('sms')" id="tab-ad-sms" class="flex-1 py-2.5 px-4 font-bold text-xs rounded-xl transition duration-200 text-center text-gray-600 hover:bg-gray-100">
+                        💬 Short SMS / Alert
+                    </button>
+                </div>
+
+                <!-- Tab Panel Container -->
+                <div class="p-6 flex-1 overflow-y-auto min-h-[220px]">
+                    <div id="ad-tab-content-panel" class="bg-gray-50 p-4 rounded-2xl border border-gray-100 text-gray-700 text-sm font-mono whitespace-pre-wrap leading-relaxed select-all">
+                        Generating...
+                    </div>
+                </div>
+
+                <!-- Modal Actions -->
+                <div class="p-6 border-t border-gray-100 bg-gray-50/50 flex flex-col sm:flex-row gap-3 justify-between items-center shrink-0">
+                    <p class="text-[11px] text-gray-500 text-center sm:text-left">💡 <strong>Quick Tip:</strong> Click the button to copy. Customize generic tags like <em>[Your Shop Name]</em> before broadcasting to your clients.</p>
+                    <button onclick="copyAdTextToClipboard()" class="w-full sm:w-auto px-6 py-3 bg-indigoBrand-900 hover:bg-amber-500 hover:text-indigoBrand-900 text-white font-extrabold text-xs rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                        Copy Selected Ad to Clipboard
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigoBrand-950 text-white pt-16 pb-8 border-t border-white/5 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10">
+            
+            <!-- Company Info (Col 1) -->
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="bg-amber-500 text-indigoBrand-950 p-2 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <span class="text-xl font-extrabold text-white tracking-tight">INDIAN LOT BAZAAR</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+                    Direct surplus, liquidations, export excess, and factory-authorized footwear/apparel bulk clearing house in India. We supply premium retail lots to traders nationwide.
+                </p>
+                <div class="flex gap-3">
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-bold tracking-wider rounded-full uppercase text-amber-400">🔥 GST Registered Wholesaler</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-bold tracking-wider rounded-full uppercase text-amber-400">📦 ISO Certified QC</span>
+                </div>
+            </div>
+
+            <!-- Fast Links (Col 2) -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-amber-400">Inventory Lots</h4>
+                <ul class="space-y-2 text-xs text-gray-400 font-semibold">
+                    <li><a href="#lots-catalog" onclick="filterCategory('clothes')" class="hover:text-white transition">👕 Wholesale Men's Apparel</a></li>
+                    <li><a href="#lots-catalog" onclick="filterCategory('clothes')" class="hover:text-white transition">👗 Women's Ethnic & Kurtis Lots</a></li>
+                    <li><a href="#lots-catalog" onclick="filterCategory('footwear')" class="hover:text-white transition">👟 Branded Sports Shoes Surplus</a></li>
+                    <li><a href="#lots-catalog" onclick="filterCategory('footwear')" class="hover:text-white transition">👞 Premium Leather Formal Footwear</a></li>
+                    <li><a href="#lots-catalog" class="hover:text-white transition">👔 Mix Surplus Clearance Batches</a></li>
+                </ul>
+            </div>
+
+            <!-- Wholesale Terms / Help (Col 3) -->
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-amber-400">Wholesale Terms</h4>
+                <ul class="space-y-2 text-xs text-gray-400 font-semibold">
+                    <li>✔️ <strong>Minimum Order (MOQ):</strong> 100 Pcs / Lot Combo</li>
+                    <li>✔️ <strong>Payment Terms:</strong> Freight dispatch advance booking options available</li>
+                    <li>✔️ <strong>Quality Assurance:</strong> Live Video inspection call allowed for booking validation</li>
+                    <li>✔️ <strong>Delivery Scope:</strong> Pan-India major transport services supported (TCI, V-Trans, Safexpress)</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/5 text-center text-[11px] text-gray-500">
+            <p>© 2026 Indian Lot Bazaar Wholesalers Pvt. Ltd. All rights reserved. Brand names, logos, or trademarks of surplus stocks showcased are properties of respective brand houses and manufacturers.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGICAL ENGINE -->
+    <script>
+        /* ---------------- DATA STORAGE: Wholesale Stock Lots catalog array ---------------- */
+        const stockLots = [
+            {
+                id: "lot-jeans-500",
+                title: "Premium Men's Stretch Denim Mix Lot",
+                category: "clothes",
+                imageEmoji: "👖",
+                lotSize: 500,
+                unitPrice: 180,
+                originalRetail: 699,
+                description: "Export quality heavy-GSM jeans. Mixed sizes (30-38), premium washes, including straight-fit & slim-fit leftovers.",
+                tags: ["Export Surplus", "Best Seller"],
+                qualityScore: "A++ Quality Assurance"
+            },
+            {
+                id: "lot-kurtis-200",
+                title: "Ladies Pure Cotton Designer Kurtis",
+                category: "clothes",
+                imageEmoji: "👗",
+                lotSize: 200,
+                unitPrice: 110,
+                originalRetail: 399,
+                description: "Jaipuri prints, boutique designs, lightweight breathable cotton fabrics. Handpicked combo lot in high demand.",
+                tags: ["Ethnic wear", "Cotton Mix"],
+                qualityScore: "Boutique standard"
+            },
+            {
+                id: "lot-shoes-200",
+                title: "Men's Premium Running Sports Shoes Lot",
+                category: "footwear",
+                imageEmoji: "👟",
+                lotSize: 200,
+                unitPrice: 280,
+                originalRetail: 999,
+                description: "Ultralight breathable mesh sneakers. Includes individual premium brand style boxes with complete size charts (6-10).",
+                tags: ["Branded Surplus", "Fast Selling"],
+                qualityScore: "Brand Leftover"
+            },
+            {
+                id: "lot-shirts-300",
+                title: "Men's Semi-Formal Linen & Cotton Shirts",
+                category: "clothes",
+                imageEmoji: "👔",
+                lotSize: 300,
+                unitPrice: 130,
+                originalRetail: 499,
+                description: "Full sleeves, checked, solids, striped designs. Premium brand surplus, fresh lot condition with retail price tags.",
+                tags: ["Linen Mix", "Cleared Lot"],
+                qualityScore: "Fresh Surplus"
+            },
+            {
+                id: "lot-sandals-150",
+                title: "Men's Leather Casual Sandals & Chappals",
+                category: "footwear",
+                imageEmoji: "👞",
+                lotSize: 150,
+                unitPrice: 195,
+                originalRetail: 699,
+                description: "Premium synthetic & genuine leather blend casual wear slippers. Cushioned sole for ultimate comfort.",
+                tags: ["Water Resistant", "Hot Deal"],
+                qualityScore: "QC Double Checked"
+            },
+            {
+                id: "lot-kids-1000",
+                title: "Premium Cotton Kids Clothing Lot Set",
+                category: "clothes",
+                imageEmoji: "🧒",
+                lotSize: 1000,
+                unitPrice: 80,
+                originalRetail: 299,
+                description: "Assorted kids wear, tees, shorts, dungarees. Extremely soft premium organic fabrics, non-allergic print safe.",
+                tags: ["Organic Cotton", "Big Lot Volume"],
+                qualityScore: "Kid-Safe Assured"
+            },
+            {
+                id: "lot-boots-100",
+                title: "Premium Men's Suede Leather Boots Lot",
+                category: "footwear",
+                imageEmoji: "🥾",
+                lotSize: 100,
+                unitPrice: 350,
+                originalRetail: 1499,
+                description: "Excellent craftsmanship ankle-high boots. Water-resistant outer shell with rugged anti-slip soles. Limited quantity.",
+                tags: ["Boutique Grade", "Premium Surplus"],
+                qualityScore: "Top Premium"
+            },
+            {
+                id: "lot-sneakers-250",
+                title: "Women's Canvas Casual Sneakers Mix",
+                category: "footwear",
+                imageEmoji: "👟",
+                lotSize: 250,
+                unitPrice: 160,
+                originalRetail: 599,
+                description: "Trending pastel shades, durable rubber vulcanized soles, comfortable inner lining. Assorted mix styles.",
+                tags: ["Pastel Colors", "Trending Style"],
+                qualityScore: "Superb Quality"
+            }
+        ];
+
+        /* Inquiry basket (array of lot objects + custom selected quantities) */
+        let inquiryBasket = [];
+
+        const geminiApiKey = ""; // Handled automatically by the Canvas live environment
+        const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${geminiApiKey}`;
+
+        // Global variables holding computed AI marketing responses
+        let generatedCampaignAdTexts = {
+            whatsapp: "",
+            instagram: "",
+            sms: ""
+        };
+        let activeAdTab = "whatsapp";
+
+        /* ---------------- STREAMING_CHUNK: App Loading & Renderer functions ---------------- */
+        window.onload = function() {
+            // Render the stock catalog initially on load
+            renderCatalog("all");
+            // Set initial state for calculations
+            calculateMargins();
+        };
+
+        // Render stock lots dynamically
+        function renderCatalog(categoryFilter = "all") {
+            const grid = document.getElementById("product-grid");
+            grid.innerHTML = "";
+
+            const filtered = categoryFilter === "all" ? stockLots : stockLots.filter(lot => lot.category === categoryFilter);
+
+            filtered.forEach(lot => {
+                const card = document.createElement("div");
+                card.className = "bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between";
+                
+                // Formulate HTML block with dynamic AI ad buttons
+                card.innerHTML = `
+                    <div class="relative">
+                        <!-- Top details -->
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="px-2.5 py-1 bg-amber-500/10 text-amber-700 text-[10px] font-extrabold uppercase rounded-full">${lot.qualityScore}</span>
+                            <span class="text-xs text-gray-400 font-bold font-mono">ID: #${lot.id}</span>
+                        </div>
+                        
+                        <!-- Visual Emoji Representative -->
+                        <div class="relative w-full h-40 bg-gray-50 rounded-xl mb-4 flex items-center justify-center text-7xl select-none group/img">
+                            ${lot.imageEmoji}
+                            <!-- Inline AI shortcut button -->
+                            <button onclick="generateSingleLotAdCampaign('${lot.id}')" title="Generate Sales Ads with Gemini AI" class="absolute top-2.5 right-2.5 bg-indigoBrand-900/90 text-white hover:bg-amber-500 hover:text-indigoBrand-900 p-2 rounded-xl backdrop-blur-xs transition shadow-md flex items-center justify-center">
+                                ✨ <span class="text-[9px] font-bold ml-1.5 max-w-0 overflow-hidden group-hover/img:max-w-xs transition-all duration-300">Generate Ads</span>
+                            </button>
+                        </div>
+
+                        <!-- Info details -->
+                        <h3 class="font-bold text-gray-900 text-base leading-tight">${lot.title}</h3>
+                        <p class="text-xs text-gray-500 mt-2 line-clamp-2">${lot.description}</p>
+
+                        <!-- Highlights tags -->
+                        <div class="flex flex-wrap gap-1 mt-3">
+                            ${lot.tags.map(tag => `<span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-[9px] font-bold rounded">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-gray-100 space-y-3">
+                        <!-- Wholesale Pricing details -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest block font-bold">Price / Piece</span>
+                                <div class="flex items-baseline gap-1.5">
+                                    <span class="text-xl font-extrabold text-indigoBrand-900">₹${lot.unitPrice}</span>
+                                    <span class="text-[10px] text-gray-400 line-through">₹${lot.originalRetail}</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest block font-bold">Lot Quantity</span>
+                                <span class="text-xs font-extrabold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100">${lot.lotSize} Pcs Mix</span>
+                            </div>
+                        </div>
+
+                        <!-- Action trigger -->
+                        <div class="grid grid-cols-5 gap-2">
+                            <button onclick="addToInquiryBasket('${lot.id}')" class="col-span-4 py-2.5 bg-indigoBrand-900 hover:bg-amber-500 hover:text-indigoBrand-900 text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+                                Add Lot to Inquiry
+                            </button>
+                            <button onclick="generateSingleLotAdCampaign('${lot.id}')" title="Write Ads with Gemini" class="col-span-1 bg-amber-500/10 hover:bg-amber-500 hover:text-indigoBrand-900 text-amber-800 rounded-xl flex items-center justify-center transition duration-200">
+                                ✨
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            // Update badge category totals
+            updateCategoryBadgeCounters();
+        }
+
+        // Switch filter tabs
+        function filterCategory(category) {
+            // Update UI styles of buttons
+            const tabs = document.querySelectorAll(".category-tab");
+            tabs.forEach(tab => {
+                tab.className = "category-tab px-5 py-2.5 rounded-full font-bold text-sm bg-white border border-gray-200 text-gray-700 hover:bg-gray-100 transition duration-200";
+            });
+
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.className = "category-tab px-5 py-2.5 rounded-full font-bold text-sm bg-indigoBrand-900 text-white shadow-md transition duration-200";
+            }
+
+            // Render matching category cards
+            renderCatalog(category);
+        }
+
+        // Count category statistics
+        function updateCategoryBadgeCounters() {
+            document.getElementById("count-all").innerText = stockLots.length;
+            document.getElementById("count-clothes").innerText = stockLots.filter(l => l.category === "clothes").length;
+            document.getElementById("count-footwear").innerText = stockLots.filter(l => l.category === "footwear").length;
+        }
+
+        /* ---------------- STREAMING_CHUNK: Integrating General Gemini AI Caller... ---------------- */
+        
+        // Helper function implementing fetch logic with exponential backoff for the Gemini API
+        async function fetchGeminiGeneration(systemPrompt, userPrompt, retries = 3, delay = 1000) {
+            const payload = {
+                contents: [{
+                    parts: [{ text: userPrompt }]
+                }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            for (let attempt = 0; attempt < retries; attempt++) {
+                try {
+                    const response = await fetch(geminiApiUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 429 && attempt < retries - 1) {
+                            // Hit throttling, wait and retry with backoff
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2;
+                            continue;
+                        }
+                        throw new Error(`Gemini API HTTP Error: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const textResult = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (!textResult) {
+                        throw new Error("Malformatted or empty response candidate returned from Gemini.");
+                    }
+                    return textResult;
+                } catch (error) {
+                    if (attempt === retries - 1) {
+                        throw error;
+                    }
+                    // Progressive delay
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+        }
+
+        /* ---------------- STREAMING_CHUNK: Managing calculations engine... ---------------- */
+        // Wholesale Profit & Margin interactive slider calculator
+        function calculateMargins() {
+            const productSelect = document.getElementById("calc-product-type");
+            const selectedOpt = productSelect.options[productSelect.selectedIndex];
+            
+            const baseUnitCost = parseFloat(selectedOpt.getAttribute("data-unit-cost"));
+            const estRetailPrice = parseFloat(selectedOpt.getAttribute("data-retail"));
+            
+            const lotQuantity = parseInt(document.getElementById("calc-quantity-slider").value);
+            document.getElementById("calc-quantity-val").innerText = lotQuantity.toLocaleString() + " Pieces";
+
+            // Establish discount tier system based on Lot Volume size selected
+            let discountRate = 0; // percentage
+            let tierText = "";
+
+            if (lotQuantity >= 3000) {
+                discountRate = 0.15; // 15% discount for massive volumes
+                tierText = "🔥 Mega Wholesaler Tier: 15% Extra Bulk Discount Applied!";
+            } else if (lotQuantity >= 1500) {
+                discountRate = 0.10; // 10% discount
+                tierText = "🚀 High Volume Tier: 10% Extra Bulk Discount Applied!";
+            } else if (lotQuantity >= 500) {
+                discountRate = 0.05; // 5% discount
+                tierText = "✨ Standard Lot Tier: 5% Extra Bulk Discount Applied!";
+            } else {
+                discountRate = 0; // Standard MOQ
+                tierText = "📦 Mini Lot: MOQ Active. Add 500+ Pcs to unlock Volume Discount Tiers!";
+            }
+
+            // Calculations
+            const bulkDiscountVal = baseUnitCost * discountRate;
+            const finalUnitCost = baseUnitCost - bulkDiscountVal;
+            const totalCost = finalUnitCost * lotQuantity;
+            const totalRetailRevenue = estRetailPrice * lotQuantity;
+            const netProfitPercent = Math.round(((totalRetailRevenue - totalCost) / totalCost) * 100);
+
+            // Print estimates back to UI
+            document.getElementById("discount-badge-text").innerText = tierText;
+            document.getElementById("out-base-cost").innerText = "₹" + baseUnitCost;
+            document.getElementById("out-bulk-discount").innerText = `- ₹${bulkDiscountVal.toFixed(1)} (${Math.round(discountRate * 100)}%)`;
+            document.getElementById("out-final-unit").innerText = "₹" + Math.round(finalUnitCost);
+            document.getElementById("out-total-cost").innerText = "₹" + Math.round(totalCost).toLocaleString();
+            document.getElementById("out-retail-revenue").innerText = "₹" + totalRetailRevenue.toLocaleString();
+            document.getElementById("out-profit-percent").innerText = `+${netProfitPercent}% ROI`;
+        }
+
+        /* ---------------- STREAMING_CHUNK: Processing the Basket state actions... ---------------- */
+        // Toggle slide-out Drawer
+        function toggleInquiryBasket() {
+            const overlay = document.getElementById("inquiry-drawer-overlay");
+            const drawer = document.getElementById("inquiry-drawer");
+
+            if (drawer.classList.contains("translate-x-full")) {
+                drawer.classList.remove("translate-x-full");
+                overlay.classList.remove("hidden");
+                renderDrawerItems();
+            } else {
+                drawer.classList.add("translate-x-full");
+                overlay.classList.add("hidden");
+            }
+        }
+
+        // Add regular catalog item lot into Inquiry Basket
+        function addToInquiryBasket(id) {
+            const item = stockLots.find(lot => lot.id === id);
+            if (!item) return;
+
+            // Check if already exists in basket
+            const existing = inquiryBasket.find(x => x.id === id);
+            if (existing) {
+                showToast("📦 Already in basket", `We have updated ${item.title}'s default quantity in your basket list.`, "✨");
+                return;
+            }
+
+            // Add standard configuration
+            inquiryBasket.push({
+                ...item,
+                userQuantity: item.lotSize // Default lot size as first value
+            });
+
+            updateBasketCountBadge();
+            showToast("Added to Basket!", `Successfully added ${item.title} to your RFQ Inquiry list.`, "🚀");
+        }
+
+        // Add specific calculator state directly to Inquiry Basket
+        function addCalculatedToInquiry() {
+            const productSelect = document.getElementById("calc-product-type");
+            const selectedOpt = productSelect.options[productSelect.selectedIndex];
+            
+            const lotQuantity = parseInt(document.getElementById("calc-quantity-slider").value);
+            const baseUnitCost = parseFloat(selectedOpt.getAttribute("data-unit-cost"));
+            const originalRetail = parseFloat(selectedOpt.getAttribute("data-retail"));
+            const title = selectedOpt.innerText.split('(')[0].trim();
+            const emoji = selectedOpt.value.includes("jeans") ? "👖" : selectedOpt.value.includes("kurtis") ? "👗" : selectedOpt.value.includes("shoes") ? "👟" : selectedOpt.value.includes("shirts") ? "👔" : "🧒";
+
+            const calculatedLot = {
+                id: `calc-${productSelect.value}-${lotQuantity}`,
+                title: `${title} (Calculator Custom Volume)`,
+                category: "calculator-surplus",
+                imageEmoji: emoji,
+                lotSize: lotQuantity,
+                unitPrice: baseUnitCost,
+                originalRetail: originalRetail,
+                userQuantity: lotQuantity
+            };
+
+            // Avoid duplicating
+            inquiryBasket = inquiryBasket.filter(item => item.id !== calculatedLot.id);
+            inquiryBasket.push(calculatedLot);
+
+            updateBasketCountBadge();
+            showToast("Calculated Lot Saved", `Saved custom lot of ${lotQuantity} Pcs into your RFQ.`, "📈");
+            toggleInquiryBasket(); // open drawer immediately to showcase
+        }
+
+        // Update indicator counter badge UI
+        function updateBasketCountBadge() {
+            const badge = document.getElementById("basket-count-badge");
+            const count = inquiryBasket.length;
+            if (count > 0) {
+                badge.innerText = count;
+                badge.classList.remove("hidden");
+            } else {
+                badge.classList.add("hidden");
+            }
+        }
+
+        // Render current basket list inside drawer container
+        function renderDrawerItems() {
+            const container = document.getElementById("drawer-items-container");
+            const subtitle = document.getElementById("drawer-subtitle");
+            container.innerHTML = "";
+
+            subtitle.innerText = `${inquiryBasket.length} Wholesale Lot(s) Listed`;
+
+            if (inquiryBasket.length === 0) {
+                container.innerHTML = `
+                    <div class="h-64 flex flex-col items-center justify-center text-center space-y-4">
+                        <span class="text-6xl">📥</span>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Your Basket is Empty</h4>
+                            <p class="text-xs text-gray-500 max-w-xs mt-1">Explore current hot clearance lots or calculate a surplus deal to add wholesale items here.</p>
+                        </div>
+                        <a href="#lots-catalog" onclick="toggleInquiryBasket()" class="px-5 py-2.5 bg-amber-500 text-indigoBrand-900 font-bold text-xs rounded-xl uppercase tracking-wider">
+                            Explore Stock Lots
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            inquiryBasket.forEach((item, index) => {
+                const row = document.createElement("div");
+                row.className = "bg-gray-50 p-4 rounded-xl border border-gray-100 flex gap-3 relative";
+                
+                row.innerHTML = `
+                    <div class="text-3xl shrink-0 p-2 bg-white rounded-lg self-start shadow-sm border border-gray-100">${item.imageEmoji}</div>
+                    <div class="space-y-1 flex-1">
+                        <h4 class="font-bold text-xs text-indigoBrand-900 leading-tight pr-6">${item.title}</h4>
+                        <p class="text-[10px] text-gray-400">Regular MSRP: ₹${item.originalRetail}/pc</p>
+                        
+                        <!-- Mini dynamic calculation preview based on quantity editing -->
+                        <div class="flex items-center gap-1.5 pt-1">
+                            <label class="text-[10px] font-bold text-gray-500 uppercase">Lot Size Qty:</label>
+                            <input type="number" min="100" step="50" value="${item.userQuantity}" onchange="updateItemQuantity('${item.id}', this.value)" class="w-20 bg-white border border-gray-200 rounded px-1.5 py-0.5 text-xs font-bold focus:border-indigo-600 outline-none">
+                        </div>
+
+                        <div class="text-xs pt-2 font-bold text-indigo-700 flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <span>Base Rate: ₹${item.unitPrice}/pc</span>
+                                <span class="text-green-600 font-extrabold">Est Cost: ₹${(item.unitPrice * item.userQuantity).toLocaleString()}</span>
+                            </div>
+                            <button onclick="generateSingleLotAdCampaign('${item.id}')" title="Generate ad assets for this item" class="px-2 py-1 bg-amber-500/10 hover:bg-amber-500 hover:text-indigoBrand-900 text-amber-800 rounded-lg text-[10px] font-extrabold transition">
+                                ✨ Ad Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remove Item Trigger -->
+                    <button onclick="removeFromInquiryBasket('${item.id}')" class="absolute top-3 right-3 text-gray-400 hover:text-red-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        // Handle live quantity editing within Drawer
+        function updateItemQuantity(id, newQty) {
+            const quantityVal = parseInt(newQty);
+            const item = inquiryBasket.find(x => x.id === id);
+            
+            if (item && quantityVal >= 100) {
+                item.userQuantity = quantityVal;
+                renderDrawerItems(); // re-render math values
+            } else if (quantityVal < 100) {
+                showToast("⚠️ Minimum Quantity Alert", "For wholesale lots, the minimum booking quantity allowed is 100 pcs.", "❗");
+                item.userQuantity = 100;
+                renderDrawerItems();
+            }
+        }
+
+        // Remove item from basket array
+        function removeFromInquiryBasket(id) {
+            inquiryBasket = inquiryBasket.filter(item => item.id !== id);
+            updateBasketCountBadge();
+            renderDrawerItems();
+            showToast("Item Removed", "Successfully removed surplus lot from your RFQ basket.", "🗑️");
+        }
+
+        /* ---------------- STREAMING_CHUNK: Managing forms submission actions... ---------------- */
+        // Submit Inquiry form (RFQ)
+        function submitRFQ(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("rfq-name").value;
+            const phone = document.getElementById("rfq-phone").value;
+            const city = document.getElementById("rfq-city").value;
+
+            if (inquiryBasket.length === 0) {
+                showToast("⚠️ Submission Failed", "Your inquiry basket is empty. Please add some stock lots before submission.", "❌");
+                return;
+            }
+
+            // Generate an inquiry log summary (can be sent dynamically to a backend/email API)
+            let inquirySummary = inquiryBasket.map(item => `• ${item.title} (Quantity Requested: ${item.userQuantity} Pcs, Base Rate: ₹${item.unitPrice})`).join("\n");
+            
+            // Generate nice response
+            showToast("🎉 Inquiry Request Submitted!", `Dear ${name}, our sales dispatch team has received your wholesale RFQ. We will contact you via WhatsApp (+91 ${phone}) within 1 hour with a customized freight quote to ${city}.`, "💼");
+
+            // Empty cart
+            inquiryBasket = [];
+            updateBasketCountBadge();
+            toggleInquiryBasket();
+
+            // Clear inputs
+            document.getElementById("drawer-form").reset();
+        }
+
+        // Submit Direct form
+        function handleDirectContactForm(e) {
+            e.preventDefault();
+            
+            // Custom toast instead of default boring alerts
+            showToast("📨 Request Dispatched!", "Thank you for getting in touch. Your detailed warehouse query has been queued for execution. Our wholesale representative will call you shortly.", "✅");
+            document.getElementById("direct-contact-form").reset();
+        }
+
+        /* ---------------- STREAMING_CHUNK: Triggering responsive utility helpers... ---------------- */
+        // Responsive Menu trigger
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobile-menu");
+            const openIcon = document.getElementById("menu-icon-open");
+            const closeIcon = document.getElementById("menu-icon-close");
+
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+                openIcon.classList.add("hidden");
+                closeIcon.classList.remove("hidden");
+            } else {
+                menu.classList.add("hidden");
+                openIcon.classList.remove("hidden");
+                closeIcon.classList.add("hidden");
+            }
+        }
+
+        // Toast notification triggers
+        let toastTimeout;
+        function showToast(title, message, emoji = "🎉") {
+            const toast = document.getElementById("custom-toast");
+            const tTitle = document.getElementById("toast-title");
+            const tMsg = document.getElementById("toast-message");
+            const tEmoji = document.getElementById("toast-emoji");
+
+            // Stop current timeout
+            clearTimeout(toastTimeout);
+
+            tTitle.innerText = title;
+            tMsg.innerText = message;
+            tEmoji.innerText = emoji;
+
+            // Trigger animation classes
+            toast.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+            toast.classList.add("translate-y-0", "opacity-100");
+
+            // Auto dismiss toast after 6 seconds
+            toastTimeout = setTimeout(() => {
+                dismissToast();
+            }, 6500);
+        }
+
+        function dismissToast() {
+            const toast = document.getElementById("custom-toast");
+            toast.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+            toast.classList.remove("translate-y-0", "opacity-100");
+        }
+
+        /* ---------------- STREAMING_CHUNK: Implementing Gemini AI Ad Generation Logic... ---------------- */
+        
+        // Opens campaign modal and requests copywriting from Gemini API
+        async function generateSingleLotAdCampaign(lotId) {
+            // Find custom computed catalog item or basic lot
+            let targetItem = stockLots.find(lot => lot.id === lotId);
+            if (!targetItem) {
+                // Check if it exists in current active Inquiry Basket
+                targetItem = inquiryBasket.find(lot => lot.id === lotId);
+            }
+
+            if (!targetItem) {
+                showToast("⚠️ Generation Error", "We could not find the lot data. Please try again.", "❌");
+                return;
+            }
+
+            // Setup Modal state
+            const modal = document.getElementById("ai-ad-modal");
+            const modalLoader = document.getElementById("ad-modal-loader");
+            const modalContent = document.getElementById("ad-modal-content");
+            const lotTitleEl = document.getElementById("ad-modal-lot-title");
+
+            lotTitleEl.innerText = `${targetItem.imageEmoji} Creative Ads: ${targetItem.title}`;
+            
+            // Render modal container and animate entry
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modal.querySelector(".transform").classList.remove("scale-95");
+            }, 50);
+
+            // Display loading stage
+            modalLoader.classList.remove("hidden");
+            modalContent.classList.add("hidden");
+
+            // Define the System Copywriter persona prompt
+            const systemPrompt = `You are a professional B2B marketing strategist and Indian retail copywriter. 
+Your job is to write ultra-engaging, high-conversion retail marketing assets for shop owners, boutique dealers, and local traders in India.
+You must construct exactly THREE marketing messages based on the wholesale lot details supplied.
+Use placeholders like [Your Shop Name] and [Contact Number] so the merchant can easily copy, replace, and broadcast immediately to their local customer networks.
+Respond using a structured JSON pattern adhering to this format:
+{
+  "whatsapp": "The WhatsApp Broadcast text goes here. Use emojis generously, bold headings, bullet points, attractive retail markup price and a dynamic call-to-action.",
+  "instagram": "The Instagram caption text. Lifestyle and fashion-oriented hook, emoji accents, spacing and a bunch of generic trending tags like #ApparelLot #BoutiqueIndia #ExportSurplus.",
+  "sms": "A short, crisp SMS/Text Alert limited to 160 characters. Urgent, clearance-heavy tone."
+}`;
+
+            const userPrompt = `Develop commercial retail ad copy for this lot:
+Product Title: "${targetItem.title}"
+Wholesale Unit Rate: ₹${targetItem.unitPrice} per piece
+Recommended Retail Value (MSRP): ₹${targetItem.originalRetail} per piece
+Description of items: "${targetItem.description}"
+Wholesale Tags: [${targetItem.tags.join(", ")}]
+
+Help the retailer convince their local customers that this is a premium quality garment/footwear item available at a stellar discounted value. Mention they are buying a double QC checked surplus deal.`;
+
+            try {
+                const responseText = await fetchGeminiGeneration(systemPrompt, userPrompt);
+                
+                // Parse the response. We enforce JSON parsing in this workflow.
+                // In case Gemini returns Markdown code wraps, let's strip them safely.
+                let cleanJson = responseText.trim();
+                if (cleanJson.startsWith("```json")) {
+                    cleanJson = cleanJson.slice(7);
+                }
+                if (cleanJson.endsWith("```")) {
+                    cleanJson = cleanJson.slice(0, -3);
+                }
+                cleanJson = cleanJson.trim();
+
+                const adData = JSON.parse(cleanJson);
+                
+                generatedCampaignAdTexts.whatsapp = adData.whatsapp || "No WhatsApp ad generated.";
+                generatedCampaignAdTexts.instagram = adData.instagram || "No Instagram post generated.";
+                generatedCampaignAdTexts.sms = adData.sms || "No SMS alert generated.";
+
+                // Switch active display text to default WhatsApp
+                switchAdTab("whatsapp");
+
+                // Present finished elements
+                modalLoader.classList.add("hidden");
+                modalContent.classList.remove("hidden");
+            } catch (err) {
+                console.error("Gemini Ad Generation Error: ", err);
+                // Fallback rendering in case of failure or network issues
+                generatedCampaignAdTexts.whatsapp = `🔥 MASSIVE SURPLUS CLEARANCE! 🔥\n\nGet premium standard ${targetItem.title} only at [Your Shop Name]! Leftovers direct from top brands at unbeatable pricing.\n\n📍 Visit us today or WhatsApp [Contact Number] to book!`;
+                generatedCampaignAdTexts.instagram = `Fresh arrivals in store! 🌟 Check out our handpicked ${targetItem.title} collection. Direct from export surplus lots to your closet at super affordable prices.\n\n#ApparelSurplus #RetailDeals #BoutiqueDeals`;
+                generatedCampaignAdTexts.sms = `Limited stock! Get high quality ${targetItem.title} at special launch discount prices only at [Your Shop Name]. Hurry before stock runs out!`;
+                
+                switchAdTab("whatsapp");
+                modalLoader.classList.add("hidden");
+                modalContent.classList.remove("hidden");
+                showToast("⚠️ Offline Ad Copy Mode Active", "Generated fallback template. Standard Gemini API is busy or offline.", "ℹ️");
+            }
+        }
+
+        /* ---------------- STREAMING_CHUNK: Fixing API loading state animations... ---------------- */
+
+        // Generates marketing campaigns matching the entire collective inquiry basket
+        async function generateBasketCampaignAds() {
+            if (inquiryBasket.length === 0) {
+                showToast("⚠️ Basket is empty", "Add items to your inquiry basket first to write group promotional campaigns.", "❌");
+                return;
+            }
+
+            const modal = document.getElementById("ai-ad-modal");
+            const modalLoader = document.getElementById("ad-modal-loader");
+            const modalContent = document.getElementById("ad-modal-content");
+            const lotTitleEl = document.getElementById("ad-modal-lot-title");
+
+            lotTitleEl.innerText = `✨ Basket Campaign: Multi-Lot Clearance Promo`;
+            
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modal.querySelector(".transform").classList.remove("scale-95");
+            }, 50);
+
+            modalLoader.classList.remove("hidden");
+            modalContent.classList.add("hidden");
+
+            const itemsStr = inquiryBasket.map(item => `- ${item.title} (Regular Retail Value: ₹${item.originalRetail}/pc)`).join("\n");
+
+            const systemPrompt = `You are a professional B2B marketing writer in India.
+Craft three ready-to-use wholesale-clearing promotion ads celebrating a massive multi-product fresh catalog drop.
+Write copies for:
+1. WhatsApp (Highly interactive, visual emojis, price alert, urgent)
+2. Instagram (Aesthetic lifestyle and store drop, hashtags)
+3. SMS Alert (Short, limited to 160 characters, direct discount, call to action)
+Format your response purely in a valid JSON object matching:
+{
+  "whatsapp": "...",
+  "instagram": "...",
+  "sms": "..."
+}`;
+
+            const userPrompt = `Generate campaigns for a major seasonal inventory drop at the retailer's store featuring all of these handpicked surplus lots:
+${itemsStr}
+
+Focus on telling retail consumers that a major export surplus stock clearance has landed in our showroom and items are selling out incredibly fast.`;
+
+            try {
+                const responseText = await fetchGeminiGeneration(systemPrompt, userPrompt);
+                let cleanJson = responseText.trim();
+                if (cleanJson.startsWith("```json")) cleanJson = cleanJson.slice(7);
+                if (cleanJson.endsWith("```")) cleanJson = cleanJson.slice(0, -3);
+                
+                const adData = JSON.parse(cleanJson.trim());
+                generatedCampaignAdTexts.whatsapp = adData.whatsapp;
+                generatedCampaignAdTexts.instagram = adData.instagram;
+                generatedCampaignAdTexts.sms = adData.sms;
+
+                switchAdTab("whatsapp");
+                modalLoader.classList.add("hidden");
+                modalContent.classList.remove("hidden");
+            } catch (err) {
+                console.error("Gemini Basket Campaign error: ", err);
+                generatedCampaignAdTexts.whatsapp = `✨ EXPORT CLEARANCE SALE! ✨\n\nDirect brand leftovers & surplus lots are now live in our showroom! High-quality clothes and premium footwear now stocking at unmatched discount pricing.\n\n⚡ limited pieces left! WhatsApp us at [Contact No] to book now!`;
+                generatedCampaignAdTexts.instagram = `The big surplus clearance drop is finally here! 👗👟 Direct export leftover clothing & sneaker collections are available at insane discounts.\n\n#FashionDeals #IndianApparel #BoutiqueStock`;
+                generatedCampaignAdTexts.sms = `Mega Brand Surplus Sale! High-end clothes & footwear at clearance rates. Visit [Your Shop Name] today!`;
+                
+                switchAdTab("whatsapp");
+                modalLoader.classList.add("hidden");
+                modalContent.classList.remove("hidden");
+            }
+        }
+
+        // Swaps dynamic tabs on the modal UI
+        function switchAdTab(tabId) {
+            activeAdTab = tabId;
+            const tabButtons = ["whatsapp", "instagram", "sms"];
+            
+            tabButtons.forEach(t => {
+                const btn = document.getElementById(`tab-ad-${t}`);
+                btn.className = "flex-1 py-2.5 px-4 font-bold text-xs rounded-xl transition duration-200 text-center text-gray-600 hover:bg-gray-100";
+            });
+
+            const activeBtn = document.getElementById(`tab-ad-${tabId}`);
+            activeBtn.className = "flex-1 py-2.5 px-4 font-bold text-xs rounded-xl transition duration-200 text-center bg-indigoBrand-900 text-white";
+
+            const outputPanel = document.getElementById("ad-tab-content-panel");
+            outputPanel.innerText = generatedCampaignAdTexts[tabId];
+        }
+
+        // Action executing copy process to local user device
+        function copyAdTextToClipboard() {
+            const copyText = generatedCampaignAdTexts[activeAdTab];
+            
+            // Create fallback input element
+            const el = document.createElement("textarea");
+            el.value = copyText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand("copy");
+            document.body.removeChild(el);
+
+            showToast("📋 Copied to Clipboard!", `Successfully copied the B2B AI ${activeAdTab.toUpperCase()} template to your device clipboard.`, "✨");
+        }
+
+        function closeAdModal() {
+            const modal = document.getElementById("ai-ad-modal");
+            modal.classList.add("opacity-0");
+            modal.querySelector(".transform").classList.add("scale-95");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 300);
+        }
+
+        /* ---------------- STREAMING_CHUNK: Floating AI B2B Advisor Chatbot Logic... ---------------- */
+        
+        // Toggle the interactive floating chatbox
+        function toggleAiAssistant() {
+            const chatBox = document.getElementById("ai-chat-window");
+            if (chatBox.classList.contains("hidden")) {
+                chatBox.classList.remove("hidden");
+                setTimeout(() => {
+                    chatBox.classList.remove("translate-y-4", "opacity-0");
+                }, 50);
+            } else {
+                chatBox.classList.add("translate-y-4", "opacity-0");
+                setTimeout(() => {
+                    chatBox.classList.add("hidden");
+                }, 300);
+            }
+        }
+
+        function handleAiChatKey(event) {
+            if (event.key === "Enter") {
+                sendAiChatMessage();
+            }
+        }
+
+        // Activates quick prompt questions
+        function triggerQuickAiQuery(queryText) {
+            document.getElementById("ai-user-input").value = queryText;
+            sendAiChatMessage();
+        }
+
+        // Compiles chat state and asks Gemini
+        async function sendAiChatMessage() {
+            const inputField = document.getElementById("ai-user-input");
+            const query = inputField.value.trim();
+            if (!query) return;
+
+            const chatContainer = document.getElementById("ai-chat-messages");
+            
+            // Append user message bubble
+            const userBubble = document.createElement("div");
+            userBubble.className = "flex gap-2 max-w-[85%] ml-auto justify-end";
+            userBubble.innerHTML = `
+                <div class="bg-indigoBrand-900 text-white p-3 rounded-2xl rounded-tr-none shadow-sm text-gray-700">
+                    ${query}
+                </div>
+                <div class="shrink-0 w-6 h-6 rounded-full bg-indigoBrand-50 text-indigoBrand-900 flex items-center justify-center text-xs font-bold">👤</div>
+            `;
+            chatContainer.appendChild(userBubble);
+            
+            // Clear input and remove triggers
+            inputField.value = "";
+            const quickTriggers = document.getElementById("ai-quick-triggers");
+            if (quickTriggers) quickTriggers.remove();
+
+            // Scroll down
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Generate loading typing indicator
+            const loadBubble = document.createElement("div");
+            loadBubble.id = "ai-typing-indicator";
+            loadBubble.className = "flex gap-2 max-w-[85%]";
+            loadBubble.innerHTML = `
+                <div class="shrink-0 w-6 h-6 rounded-full bg-amber-500/15 text-amber-700 flex items-center justify-center text-xs">🤖</div>
+                <div class="bg-white border border-gray-100 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm text-gray-700 flex items-center gap-1.5">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            `;
+            chatContainer.appendChild(loadBubble);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Define Business prompt
+            const systemPrompt = `You are 'Bazaar AI', an expert B2B business development analyst and wholesale advisor for "Indian Lot Bazaar". 
+Your mission is to help apparel and footwear retailers, boutique startups, and local traders in India plan inventory, optimize wholesale budgets, and select high-ROI stock lots.
+You know our exact LIVE stock catalog: ${JSON.stringify(stockLots)}.
+Guidelines:
+1. Always suggest at least one specific lot from our live stock (mentioning its exact ID, MOQ lot size, unit price).
+2. Answer questions about budget planning, retail markup pricing, regional market suitability (e.g. humid vs cold areas), and logistical shipping within India.
+3. Keep responses highly encouraging, clear, commercial, and professional. 
+4. Write in clear, structured bullet points using Rupee symbols (₹). Maintain a friendly Indo-Western professional vibe. Make responses succinct (under 180 words) to fit comfortably in a chat window.`;
+
+            try {
+                const response = await fetchGeminiGeneration(systemPrompt, query);
+                
+                // Clear loading indicator
+                document.getElementById("ai-typing-indicator").remove();
+
+                // Append AI reply
+                const aiBubble = document.createElement("div");
+                aiBubble.className = "flex gap-2 max-w-[85%]";
+                aiBubble.innerHTML = `
+                    <div class="shrink-0 w-6 h-6 rounded-full bg-amber-500/15 text-amber-700 flex items-center justify-center text-xs">🤖</div>
+                    <div class="bg-white border border-gray-100 p-3 rounded-2xl rounded-tl-none shadow-sm text-gray-700 text-xs">
+                        ${response.replace(/\n/g, "<br>")}
+                    </div>
+                `;
+                chatContainer.appendChild(aiBubble);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            } catch (err) {
+                console.error("AI Assistant Error: ", err);
+                document.getElementById("ai-typing-indicator").remove();
+
+                const errBubble = document.createElement("div");
+                errBubble.className = "flex gap-2 max-w-[85%]";
+                errBubble.innerHTML = `
+                    <div class="shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs">⚠️</div>
+                    <div class="bg-red-50 border border-red-100 p-3 rounded-2xl rounded-tl-none shadow-sm text-red-800 text-xs">
+                        Apologies, I hit a slight connection glitch. For manual wholesale rates and inquiries, connect with our support desk on WhatsApp at +91 9873099173.
+                    </div>
+                `;
+                chatContainer.appendChild(errBubble);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>```
+
+```
